@@ -1,0 +1,45 @@
+#
+# S3 resources
+#
+data "aws_iam_policy_document" "read_only_bucket_policy" {
+  policy_id = "S3AnonymousReadOnlyPolicy"
+
+  statement {
+    sid = "S3ReadOnly"
+
+    effect = "Allow"
+
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+
+    actions = ["s3:GetObject"]
+
+    resources = [
+      "arn:aws:s3:::${var.bucket_name}/*",
+    ]
+  }
+}
+
+resource "aws_s3_bucket" "site_bucket" {
+  bucket = "${var.bucket_name}"
+  policy = "${data.aws_iam_policy_document.read_only_bucket_policy.json}"
+  region = "${var.region}"
+
+  tags {
+    Project     = "${var.project}"
+    Environment = "${var.environment}"
+  }
+}
+
+resource "aws_s3_bucket" "access_logs_bucket" {
+  bucket = "${var.logs_bucket_name}"
+  acl    = "log-delivery-write"
+  region = "${var.region}"
+
+  tags {
+    Project     = "${var.project}"
+    Environment = "${var.environment}"
+  }
+}
