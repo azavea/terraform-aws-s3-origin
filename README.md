@@ -28,19 +28,20 @@ resource "aws_cloudfront_distribution" "site" {
 
 
 # Variables
-`bucket_name` - Name of bucket where the site will be hosted.
-`logs_bucket_name` - Name of the access logs bucket.
-`region`  - Name of the region where buckets should be created (default: `us-east-1`)
-`cors_allowed_headers` - Allowed CORS headers (default: `["Authorization"]`)
-`cors_allowed_methods` - Allowed CORS methods (default: `["GET"]`)
-`cors_allowed_origins` - Allowed CORS origins (default: `["*"]`)
-`cors_expose_headers` - Headers to expose in the response (default: `[]`)
-`cors_max_age_seconds` - Maximum seconds a browser can cache a response (default: `3000`)
 
-`project` - Name of the project that this site is for (default: `Unknown`)
-`environment` - Name of the environment this site is targeting (default: `Unknown`)
+- `bucket_name` - Name of bucket where the site will be hosted.
+- `logs_bucket_name` - Name of the access logs bucket.
+- `region`  - Name of the region where buckets should be created (default: `us-east-1`)
+- `cors_allowed_headers` - Allowed CORS headers (default: `["Authorization"]`)
+- `cors_allowed_methods` - Allowed CORS methods (default: `["GET"]`)
+- `cors_allowed_origins` - Allowed CORS origins (default: `["*"]`)
+- `cors_expose_headers` - Headers to expose in the response (default: `[]`)
+- `cors_max_age_seconds` - Maximum seconds a browser can cache a response (default: `3000`)
+- `project` - Name of the project that this site is for (default: `Unknown`)
+- `environment` - Name of the environment this site is targeting (default: `Unknown`)
 
 # Outputs
-`site_bucket` - Name of the site bucket
-`logs_bucket` - Name of the logs bucket
+
+- `site_bucket` - Name of the site bucket
+- `logs_bucket` - Name of the logs bucket
 
