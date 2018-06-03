@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "read_only_bucket_policy" {
     effect = "Allow"
 
     principals {
-      type        = "AWS"
+      type        = "*"
       identifiers = ["*"]
     }
 
