@@ -1,4 +1,7 @@
 # terraform-aws-s3-origin
+
+[![CircleCI](https://circleci.com/gh/azavea/terraform-aws-s3-origin.svg?style=svg)](https://circleci.com/gh/azavea/terraform-aws-s3-origin)
+
 A Terraform module to create an origin S3 bucket (for use with CloudFront) with read-only access for anonymous users.
 
 # Usage
