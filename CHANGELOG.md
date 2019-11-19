@@ -1,3 +1,8 @@
+## 1.0.0
+
+- Add support for Terraform 0.12.
+- Add continuous integration support via CircleCI.
+
 ## 0.3.0
 
 - Fix `aws_iam_policy_document` principal assignment (AWS provider 1.21.0).
