@@ -1,10 +1,13 @@
 # terraform-aws-s3-origin
+
+[![CircleCI](https://circleci.com/gh/azavea/terraform-aws-s3-origin.svg?style=svg)](https://circleci.com/gh/azavea/terraform-aws-s3-origin)
+
 A Terraform module to create an origin S3 bucket (for use with CloudFront) with read-only access for anonymous users.
 
 # Usage
 ```hcl
 module "static_site" {
-  source                      = "github.com/azavea/terraform-aws-s3-origin?ref=0.1.0"
+  source                      = "github.com/azavea/terraform-aws-s3-origin"
   bucket_name                 = "mysite-bucket"
   logs_bucket_name             = "mysite-logs-bucket"
   project                     = "Unknown"
@@ -39,6 +42,7 @@ resource "aws_cloudfront_distribution" "site" {
 - `cors_max_age_seconds` - Maximum seconds a browser can cache a response (default: `3000`)
 - `project` - Name of the project that this site is for (default: `Unknown`)
 - `environment` - Name of the environment this site is targeting (default: `Unknown`)
+- `tags` - A mapping of keys and values to apply as tags to all resources that support them.
 
 # Outputs
 
