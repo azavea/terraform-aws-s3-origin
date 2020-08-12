@@ -31,11 +31,6 @@ variable "cors_max_age_seconds" {
   type    = number
 }
 
-variable "region" {
-  default = "us-east-1"
-  type    = string
-}
-
 variable "project" {
   default = "Unknown"
   type    = string
