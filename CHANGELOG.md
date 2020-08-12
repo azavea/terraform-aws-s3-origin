@@ -1,3 +1,8 @@
+## 2.0.0
+
+- Remove read-only `region` attribute.
+- Require AWS provider >= 3.0.0.
+
 ## 1.0.0
 
 - Add support for Terraform 0.12.
