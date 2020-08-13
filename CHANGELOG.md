@@ -2,6 +2,7 @@
 
 - Remove read-only `region` attribute.
 - Require AWS provider >= 3.0.0.
+- Add `site_bucket_regional_domain_name` output.
 
 ## 1.0.0
 

@@ -45,5 +45,6 @@ resource "aws_cloudfront_distribution" "site" {
 # Outputs
 
 - `site_bucket` - Name of the site bucket
+- `site_bucket_regional_domain_name` - The region-specific domain name of the site bucket
 - `logs_bucket` - Name of the logs bucket
 
