@@ -25,7 +25,6 @@ data "aws_iam_policy_document" "read_only_bucket_policy" {
 resource "aws_s3_bucket" "site_bucket" {
   bucket = var.bucket_name
   policy = data.aws_iam_policy_document.read_only_bucket_policy.json
-  region = var.region
 
   cors_rule {
     allowed_headers = var.cors_allowed_headers
@@ -47,7 +46,6 @@ resource "aws_s3_bucket" "site_bucket" {
 resource "aws_s3_bucket" "access_logs_bucket" {
   bucket = var.logs_bucket_name
   acl    = "log-delivery-write"
-  region = var.region
 
   tags = merge(
     {
